@@ -21,8 +21,8 @@
   "bugs": {
     "url": "https://github.com/ocopjs/utils/issues"
   },
-  "main": "dist/utils.cjs.js",
-  "module": "dist/utils.esm.js",
+  "main": "./dist/utils.cjs.js",
+  "module": "./dist/utils.esm.js",
   "types": "./dist/index.d.ts",
   "engines": {
     "node": "16"
