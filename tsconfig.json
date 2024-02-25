@@ -20,5 +20,5 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "exclude": ["node_modules", "tests", "dist"]
+  "exclude": ["node_modules", "dist", "tests"]
 }

@@ -20,7 +20,7 @@ const {
   upcase,
   asyncForEach,
   ...utils
-} = require("../src");
+} = require("../dist");
 
 describe("utils", () => {
   test("upcase", () => {
