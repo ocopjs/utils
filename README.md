@@ -15,4 +15,3 @@ Gói này là gói OcopJS nội bộ chứa nhiều chức năng trợ giúp kh�
 dụng xuyên suốt các gói khác.
 
 Bạn không nên sử dụng điều này trực tiếp trong các dự án của mình.
-
