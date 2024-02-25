@@ -1,7 +1,7 @@
 {
   "name": "@ocopjs/utils",
   "description": "Các tiện ích và chức năng chung để phát triển các gói của OcopJS.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "ocopjs",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
