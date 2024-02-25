@@ -83,7 +83,7 @@ export const unique = <T>(arr: T[]): T[] => [...new Set(arr)];
 export const intersection = <T>(array1: T[], array2: T[]) =>
   unique(array1.filter((value) => array2.includes(value)));
 
-export const pick = <T, K extends keyof T>(obj: T, keys: K[]) =>
+export const pick = <T, K extends keyof T>(obj: any, keys: K[]) =>
   keys.reduce(
     (acc, key) => (key in obj ? { ...acc, [key]: obj[key] } : acc),
     {} as { [P in K]: T[P] },
