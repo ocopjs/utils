@@ -1,0 +1,37 @@
+{
+  "name": "@ocopjs/utils",
+  "description": "Các tiện ích và chức năng chung để phát triển các gói của OcopJS.",
+  "version": "1.0.0",
+  "author": "The OcopJS Development Team",
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
+    "build": "tsup",
+    "semantic-release": "semantic-release"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://ocopee.com",
+  "repository": "https://github.com/ocopjs/utils",
+  "main": "dist/utils.cjs.js",
+  "module": "dist/utils.esm.js",
+  "engines": {
+    "node": "16"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.6",
+    "p-is-promise": "^3.0.0",
+    "p-lazy": "^3.1.0",
+    "p-reflect": "^2.1.0",
+    "semver": "^7.3.5"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "prettier": "^3.2.5",
+    "semantic-release": "^23.0.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
