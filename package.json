@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "license": "Apache-2.0",
-  "homepage": "https://ocopee.com",
+  "homepage": "https://docs.ocopee.com/docs/ocopjs/references/utils",
   "publishConfig": {
     "access": "public"
   },
