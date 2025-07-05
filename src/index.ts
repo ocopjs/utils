@@ -3,6 +3,7 @@ import pReflect from "p-reflect";
 import isPromise from "p-is-promise";
 import semver from "semver";
 
+export const pIsPromise = isPromise;
 export const noop = <T>(x: T): T => x;
 export const identity = noop;
 export const getType = (thing: any) =>
