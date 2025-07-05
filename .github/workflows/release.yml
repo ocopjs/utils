@@ -30,14 +30,14 @@ jobs:
         with:
           node-version: 20
           cache: "pnpm"
-      - name: ⚙️ Install dependencies
+
+      - name: 📥 Install dependencies
         run: pnpm install
       - name: 📦 Build package
         run: pnpm run build
       - name: 🧪 test package
         run: pnpm run test
-      - name: ⚙️ Install dependencies --dev
-        run: pnpm install --dev
+
       - name: 🚀 Release package
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
