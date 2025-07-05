@@ -1,9 +1,10 @@
 import pLazy from "p-lazy";
-import pReflect from "p-reflect";
+import pReflect, { PromiseRejectedResult } from "p-reflect";
 import isPromise from "p-is-promise";
 import semver from "semver";
 
-export const pIsPromise = isPromise;
+export { pLazy, pReflect, isPromise, semver };
+
 export const noop = <T>(x: T): T => x;
 export const identity = noop;
 export const getType = (thing: any) =>
@@ -66,7 +67,7 @@ export const resolveAllKeys = async <T extends Record<string, Promise<any>>>(
   if (Object.keys(errors).length) {
     const firstReason = results.find(
       ({ isRejected }) => isRejected,
-    ) as pReflect.PromiseRejectedResult;
+    ) as PromiseRejectedResult;
     const firstError = firstReason.reason as any;
     // Use the first error as the message so it's at least meaningful
     const error: Error & { errors?: Record<string, unknown> } = new Error(

@@ -18,7 +18,7 @@ const {
   captureSuspensePromises,
   upcase,
   asyncForEach,
-  pIsPromise,
+  isPromise,
   ...utils
 } = require("../dist");
 
@@ -377,7 +377,7 @@ describe("utils", () => {
         captureSuspensePromises(funcs);
         expect(true).toBeFalsey();
       } catch (maybePromise) {
-        expect(pIsPromise(maybePromise)).toBeTruthy();
+        expect(isPromise(maybePromise)).toBeTruthy();
       }
     });
 
@@ -430,7 +430,7 @@ describe("utils", () => {
         captureSuspensePromises(funcs);
         expect(true).toBeFalsey();
       } catch (maybePromise) {
-        expect(!pIsPromise(maybePromise)).toBeTruthy();
+        expect(!isPromise(maybePromise)).toBeTruthy();
       }
     });
 
