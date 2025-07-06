@@ -2,8 +2,44 @@ import pLazy from "p-lazy";
 import pReflect, { PromiseRejectedResult } from "p-reflect";
 import isPromise from "p-is-promise";
 import semver from "semver";
+import fs from "fs";
+import path from "path";
 
 export { pLazy, pReflect, isPromise, semver };
+
+export function reads(root = "", dir = "", exts = [".js"], names = ["index"]) {
+  var paths: any[] = [];
+  const files = fs.readdirSync(path.join(root, dir));
+  for (var i in files) {
+    const file = files[i];
+    const current = path.join(root, dir, file);
+    const child = path.join(dir, file);
+    const stats = fs.lstatSync(current);
+    if (stats.isDirectory()) {
+      paths = paths.concat(reads(root, child, exts, names));
+    } else if (stats.isFile()) {
+      const result = path.parse(current);
+      if (exts.includes(result.ext)) {
+        if (names.includes(result.name)) {
+          const name = dir.replace(/\//g, "").replace(/\\/g, "");
+          const names = dir.replace(/\//g, "/").replace(/\\/g, "/").split("/");
+          paths.push({
+            name,
+            names,
+            path: `${root}/${dir}/${file}`,
+            dir: `/${dir
+              .replace(/-/g, "/")
+              .replace(/_/g, "*")
+              .replace(/:/g, "+")}`,
+            file: result.name,
+          });
+        }
+      }
+    }
+  }
+
+  return paths;
+}
 
 export function falsey(val: any, keywords?: any) {
   if (!val) return true;
