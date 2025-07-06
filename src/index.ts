@@ -5,6 +5,40 @@ import semver from "semver";
 
 export { pLazy, pReflect, isPromise, semver };
 
+export function falsey(val: any, keywords?: any) {
+  if (!val) return true;
+  let words = keywords || [
+    "0",
+    "false",
+    "nada",
+    "nil",
+    "nay",
+    "nah",
+    "negative",
+    "no",
+    "none",
+    "nope",
+    "nul",
+    "null",
+    "nix",
+    "nyet",
+    "uh-uh",
+    "veto",
+    "zero",
+  ];
+  if (!Array.isArray(words)) words = [words];
+  const lower = typeof val === "string" ? val.toLowerCase() : null;
+  for (const word of words) {
+    if (word === val) {
+      return true;
+    }
+    if (word === lower) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export const noop = <T>(x: T): T => x;
 export const identity = noop;
 export const getType = (thing: any) =>
